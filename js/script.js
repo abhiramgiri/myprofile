@@ -21,6 +21,14 @@ $(window).load(function () {
         const response = await fetch('https://ipinfo.io/json');
         const myJson = await response.json(); //extract JSON from the http response
         let myBody={...myJson,sourceinfo:window.location.href};
+        alert(myBody);
+        var i;
+        var content="";
+        for (i = 0; i < 29; i++) {    
+            content += '<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="./galleryimages/IMAGE_'+i+'.JPG" data-src="./galleryimages/IMAGE_'+i+'.JPG" data-sub-html=""><a href=""><img class="img-responsive" src="./galleryimages/IMAGE_'+i+'.JPG"></a></li>';
+        }
+        alert(content);
+        $('#lightgallery').html(content);
         const postresponse = await fetch('http://visit2doctor.com/common/save_client_details.php', {
                 method: 'POST',
                 body: myBody, // string or object
@@ -30,15 +38,10 @@ $(window).load(function () {
             });
             const mypostJson = await postresponse.json();
 
-            var i;
-        var content="";
-for (i = 0; i < 29; i++) {    
-    content += '<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="./galleryimages/IMAGE_'+i+'.JPG" data-src="./galleryimages/IMAGE_'+i+'.JPG" data-sub-html=""><a href=""><img class="img-responsive" src="./galleryimages/IMAGE_'+i+'.JPG"></a></li>';
-}
-$('#lightgallery').html(content);
+            
       }
     $('#preloader').delay(350).fadeOut('slow', function () {
-        $('.profile-page, .resume-page, .contact-page').hide();
+        $('.profile-page, .portfolio-page, .resume-page, .contact-page').hide();
     });
 });
 
