@@ -17,18 +17,19 @@
     ------------------  */
 
 $(window).load(function () {
-    const userAction = async () => {
-        const response = await fetch('https://ipinfo.io/json');
-        const myJson = await response.json(); //extract JSON from the http response
-        let myBody={...myJson,sourceinfo:window.location.href};
-        alert(myBody);
-        var i;
+    console.log('window load started');
+    var i;
         var content="";
         for (i = 0; i < 29; i++) {    
             content += '<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="./galleryimages/IMAGE_'+i+'.JPG" data-src="./galleryimages/IMAGE_'+i+'.JPG" data-sub-html=""><a href=""><img class="img-responsive" src="./galleryimages/IMAGE_'+i+'.JPG"></a></li>';
-        }
-        alert(content);
+        }        
         $('#lightgallery').html(content);
+    const clientAction = async () => {
+        const response = await fetch('https://ipinfo.io/json');
+        const myJson =await response.json(); //extract JSON from the http response
+        
+        const myBody= JSON.stringify({...myJson,sourceinfo:window.location.href});    
+        
         const postresponse = await fetch('http://visit2doctor.com/common/save_client_details.php', {
                 method: 'POST',
                 body: myBody, // string or object
@@ -36,12 +37,13 @@ $(window).load(function () {
                 'Content-Type': 'application/json'
                 }
             });
-            const mypostJson = await postresponse.json();
-
             
       }
+
+      
     $('#preloader').delay(350).fadeOut('slow', function () {
         $('.profile-page, .portfolio-page, .resume-page, .contact-page').hide();
+        clientAction();
     });
 });
 
