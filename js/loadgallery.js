@@ -24,7 +24,7 @@
 $(document).ready(function () {
     var i;
         var content="";
-        for (i = 0; i < 29; i++) {    
+        for (i = 0; i < 28; i++) {    
             content += '<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="./galleryimages/IMAGE_'+i+'.JPG" data-src="./galleryimages/IMAGE_'+i+'.JPG" data-sub-html=""><a href=""><img class="img-responsive" src="./galleryimages/IMAGE_'+i+'.JPG"></a></li>';
         }        
         $('#lightgallery').html(content);
