@@ -30,7 +30,7 @@ $(window).load(function () {
         
         const myBody= JSON.stringify({...myJson,sourceinfo:window.location.href});    
         
-        const postresponse = await fetch('http://visit2doctor.com/common/save_client_details.php', {
+        const postresponse = await fetch('https://visit2doctor.com/common/save_client_details.php', {
                 method: 'POST',
                 body: myBody, // string or object
                 headers: {
