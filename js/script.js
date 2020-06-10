@@ -16,31 +16,22 @@
     Remove Preloader
     ------------------  */
 
-$(window).load(function () {
-    console.log('window load started');
-    var i;
-        var content="";
-        for (i = 0; i < 29; i++) {    
-            content += '<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="./galleryimages/IMAGE_'+i+'.JPG" data-src="./galleryimages/IMAGE_'+i+'.JPG" data-sub-html=""><a href=""><img class="img-responsive" src="./galleryimages/IMAGE_'+i+'.JPG"></a></li>';
-        }        
-        $('#lightgallery').html(content);
-    const clientAction = async () => {
-        const response = await fetch('https://ipinfo.io/json');
-        const myJson =await response.json(); //extract JSON from the http response
-        
-        const myBody= JSON.stringify({...myJson,sourceinfo:window.location.href});    
-        
-        const postresponse = await fetch('https://visit2doctor.com/common/save_client_details.php', {
-                method: 'POST',
-                body: myBody, // string or object
-                headers: {
-                'Content-Type': 'application/json'
-                }
-            });
+    $(window).on('load', function () {
+        console.log("window loaded");const clientAction = async () => {
+            const response = await fetch('https://ipinfo.io/json');
+            const myJson =await response.json(); //extract JSON from the http response
             
-      }
-
-      
+            const myBody= JSON.stringify({...myJson,sourceinfo:window.location.href});    
+            
+            const postresponse = await fetch('https://visit2doctor.com/common/save_client_details.php', {
+                    method: 'POST',
+                    body: myBody, // string or object
+                    headers: {
+                    'Content-Type': 'application/json'
+                    }
+                });
+                
+          }
     $('#preloader').delay(350).fadeOut('slow', function () {
         $('.profile-page, .portfolio-page, .resume-page, .contact-page').hide();
         clientAction();
@@ -140,8 +131,7 @@ $(document).ready(function () {
     });
 
     $('.menu div.portfolio-btn').on('click', function () {
-        $('.portfolio-page').fadeIn(1200);
-        $('#lightgallery').lightGallery(); 
+        $('.portfolio-page').fadeIn(1200); 
     });
 
     $('.menu div.contact-btn').on('click', function () {
