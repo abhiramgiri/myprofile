@@ -25,7 +25,7 @@ $(document).ready(function () {
     var i;
         var content="";
         for (i = 0; i < 28; i++) {    
-            content += '<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="./galleryimages/IMAGE_'+i+'.JPG" data-src="./galleryimages/IMAGE_'+i+'.JPG" data-sub-html=""><a href=""><img class="img-responsive" src="./galleryimages/IMAGE_'+i+'.JPG"></a></li>';
+            content += '<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="./galleryimages/IMAGE_'+i+'.JPG" data-src="./galleryimages/view/IMAGE_'+i+'.JPG" data-download-url="./galleryimages/download/IMAGE_'+i+'.JPG"><a href=""><img class="img-responsive" src="./galleryimages/thumbnail/IMAGE_'+i+'.JPG"></a></li>';
         }        
         $('#lightgallery').html(content);
     $('#lightgallery').lightGallery(); 
