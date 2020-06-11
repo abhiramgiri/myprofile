@@ -17,24 +17,8 @@
     ------------------  */
 
     $(window).on('load', function () {
-        console.log("window loaded");const clientAction = async () => {
-            const response = await fetch('https://ipinfo.io/json');
-            const myJson =await response.json(); //extract JSON from the http response
-            
-            const myBody= JSON.stringify({...myJson,sourceinfo:window.location.href});    
-            
-            const postresponse = await fetch('https://visit2doctor.com/common/save_client_details.php', {
-                    method: 'POST',
-                    body: myBody, // string or object
-                    headers: {
-                    'Content-Type': 'application/json'
-                    }
-                });
-                
-          }
     $('#preloader').delay(350).fadeOut('slow', function () {
         $('.profile-page, .portfolio-page, .resume-page, .contact-page').hide();
-        clientAction();
     });
 });
 
