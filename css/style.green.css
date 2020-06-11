@@ -373,7 +373,6 @@ a {
 .social-media {
     font-size: 25px;
     text-align: center;
-    margin-top: 50px;
 }
 
 .social-media a {
@@ -437,12 +436,12 @@ a {
 
 .heading {
     position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
+    top: 56%;
+    -webkit-transform: translateY(-56%);
+    -moz-transform: translateY(-56%);
+    -ms-transform: translateY(-56%);
+    -o-transform: translateY(-56%);
+    transform: translateY(-56%);
 }
 
 .heading i {
@@ -450,13 +449,13 @@ a {
     border-radius: 50%;
     color: #fff;
     display: block;
-    font-size: 25px;
-    height: 60px;
-    line-height: 60px;
+    font-size: 1.5em;
+    height: 2.5em;
+    line-height: 2.5em;
     margin: auto auto 10px;
     text-align: center;
     box-shadow: 0 0 0 0 rgba(256, 256, 256, 0.2);
-    width: 60px;
+    width: 2.5em;
     -webkir-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -529,7 +528,6 @@ a {
 
 .main-heading {
     position: relative;
-    top: 50%;
     padding-left: 50px;
     -webkit-transform: translateY(200%);
     -moz-transform: translateY(200%);
