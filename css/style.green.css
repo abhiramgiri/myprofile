@@ -1105,6 +1105,9 @@ width: 24%;
                       --------------------*/
 
 /* ( a ) Portfolio Section */
+.portfolio-page{
+    background-color: #152836
+}
 
 .portfolio-page .image-container {
     background: url(../images/background/portfolio_image.jpg);
